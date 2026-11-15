@@ -1,5 +1,5 @@
 {
-  "name": "@evoker/playground",
+  "name": "@k2x/evoker-playground",
   "version": "0.1.0-beta.1",
   "private": true,
   "type": "module",
@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@k2x/evoker-core": "*",
     "@k2x/evoker": "*",
+    "@k2x/evoker-core": "*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
