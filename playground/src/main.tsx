@@ -71,7 +71,7 @@ function Catalog() {
     setNotice(`${item.label} section selected`);
   };
   useEffect(() => {
-    document.title = 'P3R Blocks & Motion — Evoker UI';
+    document.title = 'Evoker Blocks & Motion — Evoker UI';
     const section = ['#components', '#motion', '#foundations'].includes(location.hash) ? document.getElementById(location.hash.slice(1)) : null;
     if (section) { section.scrollIntoView({ behavior: 'instant' }); focusWithin(section); }
     else focusWithin(document.getElementById('demo-menu'));
@@ -113,14 +113,14 @@ function Catalog() {
       <a className="skip" href="#components" onClick={() => choose(menuItems[0]!)}>Skip to components</a>
       <header className="site-header"><BrandLink onClick={() => focusWithin(document.getElementById('demo-menu'))} /><nav aria-label="Main"><a href="#components" onClick={() => choose(menuItems[0]!)}>Components <sup>{componentItems.length}</sup></a><a href="#motion" onClick={() => choose(menuItems[1]!)}>Motion</a><a href="#foundations" onClick={() => choose(menuItems[2]!)}>Foundations</a><a href="#/docs">Docs ↗</a><a href="https://github.com/K2X-Lab/evoker" target="_blank" rel="noopener noreferrer">View source ↗</a></nav><span className="release">REACT / 0.1</span></header>
       <main ref={canvas} className="playground-canvas" aria-label="Interactive playground" onClick={focusArea} onFocusCapture={event => trackDemoFocus(event.target)} onKeyDown={keyboard}>
-        <div className="canvas-guide"><strong>P3R Blocks &amp; Motion</strong><span>Click a demo or Tab into it · Arrows navigate · Enter selects · Esc goes back</span></div>
+        <div className="canvas-guide"><strong>Evoker Blocks &amp; Motion</strong><span>Click a demo or Tab into it · Arrows navigate · Enter selects · Esc goes back</span></div>
         <section tabIndex={-1} data-playground-area="hero" className="hero" aria-labelledby="hero-title">
           <div className="water" aria-hidden="true"><i /><i /><i /><i /></div>
           <div className="hero-meta"><span>INTERFACE SYSTEM / VOL. 01</span><span>CORE + REACT</span></div>
           <h1 id="hero-title">BREAK<br /><span>THE STATIC.</span></h1>
           <div className="hero-bottom"><p>Sharp shapes. Fluid motion.<br />A reusable interface toolkit<br />in electric blue.</p><span className="hero-edition">EVOKER<br /><b>{componentItems.length}</b><small>COMPONENTS</small></span></div>
           <div id="demo-menu" tabIndex={-1} className="hero-menu"><span className="micro">SELECT YOUR NEXT MOVE</span><Menu key={replay} aria-label="Explore the toolkit" items={menuItems} onSelect={choose} /><div className="hints"><KeyHint keys={['↑', '↓']} action="Navigate" /><KeyHint keys="Enter" action="Select" /></div></div>
-          <div className="hero-caption"><span>INSPIRED BY PERSONA 3 RELOAD</span><span>ORIGINAL GEOMETRY / NO GAME ASSETS</span></div>
+          <div className="hero-caption"><span>ORIGINAL ANGULAR GEOMETRY</span><span>REACT + TYPESCRIPT / NO GAME ASSETS</span></div>
         </section>
 
         <section tabIndex={-1} data-playground-area="components" id="components" className="component-section" aria-labelledby="components-title">
@@ -158,7 +158,7 @@ function Catalog() {
             <div className="transition-stage"><span className="stage-number" aria-hidden="true">09</span><Transition show={visible} effect={effect} duration={420} className="transition-example"><Panel title="Always in motion." eyebrow="Transition / live" tone="light"><p>A shape enters. A cursor arrives. Content follows.<br />Every part keeps its own rhythm.</p><span className="panel-arrow" aria-hidden="true">↗</span></Panel></Transition></div></div>
         </section>
 
-        <section tabIndex={-1} data-playground-area="foundations" id="foundations" className="foundations" aria-labelledby="foundations-title"><div className="section-heading"><div><p className="micro">03 / FOUNDATIONS</p><h2 id="foundations-title">FIVE COLORS.<br /><em>FULL EXPRESSION.</em></h2></div><p>Original CSS geometry.<br />System typography. No image requests.</p></div><div className="swatches">{['#6d9ac7', '#1269cc', '#51eefc', '#ffffff', '#303030'].map((color, index) => <div key={color} style={{ background: color, color: index === 1 || index === 4 ? '#ffffff' : '#303030' }}><span>0{index + 1}</span><strong>{['Sky', 'Blue', 'Cyan', 'White', 'Ink'][index]}</strong><code>{color}</code></div>)}</div><p className="foundation-note">P3R composition and motion informed by extracted reference data. Browser interactions and timing are authored for this toolkit; exact native behavior remains unverified.</p></section>
+        <section tabIndex={-1} data-playground-area="foundations" id="foundations" className="foundations" aria-labelledby="foundations-title"><div className="section-heading"><div><p className="micro">03 / FOUNDATIONS</p><h2 id="foundations-title">FIVE COLORS.<br /><em>FULL EXPRESSION.</em></h2></div><p>Original CSS geometry.<br />System typography. No image requests.</p></div><div className="swatches">{['#6d9ac7', '#1269cc', '#51eefc', '#ffffff', '#303030'].map((color, index) => <div key={color} style={{ background: color, color: index === 1 || index === 4 ? '#ffffff' : '#303030' }}><span>0{index + 1}</span><strong>{['Sky', 'Blue', 'Cyan', 'White', 'Ink'][index]}</strong><code>{color}</code></div>)}</div><p className="foundation-note">Original composition and motion. Browser interactions and timing are authored for this toolkit; exact game behavior remains unverified.</p></section>
       </main>
       <footer className="site-footer"><BrandLink /><p>Engine-independent TypeScript core.<br />React is the first adapter.</p><span role="status" aria-live="polite">{notice}</span></footer>
       <Dialog open={open} onClose={() => setOpen(false)} title="Ready to move?" actions={<><Button onClick={() => { setOpen(false); setNotice('Changes confirmed'); }}>Confirm</Button><Button variant="secondary" onClick={() => setOpen(false)}>Cancel</Button></>}><p>Compose the next interface your way. Your content, your actions, your rhythm.</p><KeyHint keys="Esc" action="Close" /></Dialog>

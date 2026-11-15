@@ -20,7 +20,7 @@ npm ci
 npm run dev
 ```
 
-Fork the repository before cloning if you do not have write access. The dev server prints its local URL. The front page is the P3R Blocks & Motion playground; `/#/docs` opens the documentation.
+Fork the repository before cloning if you do not have write access. The dev server prints its local URL. The front page is the Evoker Blocks & Motion playground; `/#/docs` opens the documentation.
 
 ## Where changes belong
 

@@ -9,7 +9,7 @@ body:
     id: version
     attributes:
       label: Version or commit
-      placeholder: "Commit SHA or @evoker/react version"
+      placeholder: "Commit SHA or @k2x/evoker version"
     validations:
       required: true
   - type: textarea

@@ -18,7 +18,7 @@
 
 # Evoker UI
 
-A **Persona 3 Reload–inspired React component library** with original geometry and an engine-independent TypeScript motion core. Compose everyday primitives or start with a more expressive block. Your application owns its content, data and async operations.
+An **angular React component library** with original geometry and an engine-independent TypeScript motion core. Compose everyday primitives or start with a more expressive block. Your application owns its content, data and async operations.
 
 [Playground](https://k2x-lab.github.io/evoker/) · [Documentation](https://k2x-lab.github.io/evoker/#/docs) · [Install](https://k2x-lab.github.io/evoker/#/docs/installation) · [Components](#what-you-can-build) · [Contribute](CONTRIBUTING.md) · [Report a bug](https://github.com/K2X-Lab/evoker/issues/new/choose) · [Brand assets](docs/BRAND.md)
 
@@ -30,7 +30,7 @@ A **Persona 3 Reload–inspired React component library** with original geometry
 - **A theme you can own:** light/dark appearance, density, semantic color tokens and theme inheritance through portals. No Tailwind setup is needed.
 - **Keyboard and motion preferences:** native editing and form participation, scoped playground navigation, reduced-motion support and real-browser regression checks.
 
-All 27 playground entries have dedicated, searchable documentation pages with live examples, code and API contracts. See the [block contracts](docs/EXPANDED_COMPONENTS.md) and [architecture](docs/ARCHITECTURE.md) for more detail.
+All 39 playground entries have dedicated, searchable documentation pages with live examples, code and API contracts. See the [block contracts](docs/EXPANDED_COMPONENTS.md) and [architecture](docs/ARCHITECTURE.md) for more detail.
 
 ## Try the playground
 
@@ -45,10 +45,12 @@ npm run dev
 
 Open the URL printed by Vite:
 
-- `/` opens **P3R Blocks & Motion**, the standalone interactive front page.
+- `/` opens **Evoker Blocks & Motion**, the standalone interactive front page.
 - `/#/docs` opens **documentation**, including installation, theming and every playground component.
 
 The opening menu is keyboard-ready. Click a demo or Tab into it; arrows navigate, Enter/Space activates and Escape goes back. Native inputs, sliders, selects, nested menus and modal focus retain their own behavior.
+
+The catalog also includes Accordion, Collapsible, RadioGroup, Combobox, Popover, Sheet, Toast, Alert, Table, Pagination, Skeleton and Empty. Each has a shared playground example and documentation page. These additions are available from local builds; a new npm release is required to distribute them.
 
 ## Use Evoker in your application
 
@@ -141,4 +143,4 @@ CI runs these checks for pull requests and pushes to `main`. The browser suite n
 
 Project-authored code, geometry, documentation and the [official SVG logo](docs/BRAND.md) are available under the [MIT license](LICENSE). Dependencies retain their own licenses.
 
-Game artwork, fonts, encryption keys, extracted tables and private research are excluded from the repository and packages. Static references inform composition; exact game runtime fidelity remains unverified. See the [source policy](docs/SOURCE_POLICY.md).
+Artwork, fonts, data tables and private research are excluded from the repository and packages. Static references inform composition; exact game runtime fidelity remains unverified. See the [source policy](docs/SOURCE_POLICY.md) for the full boundary.

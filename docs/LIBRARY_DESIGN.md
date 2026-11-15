@@ -16,7 +16,7 @@ The comparison concerns public APIs, documentation and packaging, not a comprehe
 
 Base UI is a runtime dependency of the React package. It owns complex focus, keyboard, dismissal, field-validation and selection behavior; this reduces the maintenance burden of duplicating those systems. React DOM is now an explicit peer. The engine-independent core remains unchanged and has no Base UI or React dependency.
 
-Evoker owns original CSS geometry, typography defaults, its source palette, semantic tokens, block choreography and package/documentation structure. Native game artwork and complete recovered tables remain private reference material under the existing research boundary. The game data informs the design relationships; it is not silently loaded by a consumer application.
+Evoker owns original CSS geometry, typography defaults, its palette, semantic tokens, block choreography and package/documentation structure. Artwork, fonts and data tables from the reference title remain outside the repository and packages. Its design relationships are informed by that reference; nothing is loaded by a consumer application.
 
 The initial monolithic Dialog/Tabs convenience signatures remain available, but now compose the public primitives. Existing source-specific compositions are available through `/blocks`; they are not prerequisites for using a button, input, card or modal.
 

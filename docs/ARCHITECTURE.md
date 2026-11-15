@@ -8,7 +8,7 @@ The toolkit keeps three boundaries explicit:
 2. `react` owns the browser scheduler, element registration, preference detection, CSS mapping, semantic components, accessible event handling and reusable theme. React owns markup and lifecycle.
 3. `playground` owns catalog composition, copy, demo state, and application-specific motion choices. It consumes reusable components and styles.
 
-The scene, layout, and command vocabulary remains available as experimental data helpers, but motion integration uses the smaller `Renderer.apply(nodeId, props)` seam. `CssRenderer` does not interpret drawing commands, blend states, game texture masks, or material commands. The public React library separates behavior primitives, a token-based visual theme, and optional source-inspired blocks. Base UI owns complex React interaction; core timelines remain the block motion layer. A command interpreter, game asset loader, and additional production renderer remain outside the implementation.
+The scene, layout, and command vocabulary remains available as experimental data helpers, but motion integration uses the smaller `Renderer.apply(nodeId, props)` seam. `CssRenderer` does not interpret drawing commands, blend states, game texture masks, or material commands. The public React library separates behavior primitives, a token-based visual theme, and optional expressive blocks. Base UI owns complex React interaction; core timelines remain the block motion layer. A command interpreter, game asset loader, and additional production renderer remain outside the implementation.
 
 ## Timeline invariants
 

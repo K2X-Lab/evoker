@@ -2,7 +2,7 @@
   "name": "evoker",
   "private": true,
   "version": "0.1.0-beta.1",
-  "description": "P3R-inspired UI component toolkit with an engine-independent motion core",
+  "description": "Angular UI component toolkit with an engine-independent motion core",
   "workspaces": [
     "core",
     "react",

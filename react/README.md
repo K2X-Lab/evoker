@@ -1,6 +1,6 @@
 # @k2x/evoker
 
-Evoker is an MIT-licensed, P3R-inspired React UI toolkit: original angular surfaces, themed controls, independent motion and application-owned content.
+Evoker is an MIT-licensed React UI toolkit: original angular surfaces, themed controls, independent motion and application-owned content.
 
 ## Install the beta
 
@@ -26,6 +26,8 @@ export function App() {
 ```
 
 Use `@k2x/evoker/blocks` for CodeBlock, QuestBrief, PartyPanel and other compositions. Smaller entries also include `/button`, `/theme`, `/controls`, `/dialog` and `/tabs`. With Next.js, interactive usage belongs behind a client boundary and the stylesheet belongs in the root layout.
+
+Additional components include Accordion, Collapsible, RadioGroup, Combobox, Popover, Sheet, Toast, Alert, Table, Pagination, Skeleton and Empty. All use the existing theme tokens and stylesheet. RadioGroup and Combobox are also exported from `/controls`. Application code owns data and async operations. New additions require a new npm release before registry consumers can use them.
 
 The package includes ESM, TypeScript declarations, CSS and the MIT license. It contains original code and geometry; no game artwork, fonts, keys or private research are distributed.
 

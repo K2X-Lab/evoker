@@ -15,9 +15,9 @@ GitHub Actions runs these same four commands on Node.js 24 for pull requests and
 
 ## Playground regression cases
 
-- Opening `/` shows the standalone P3R Blocks & Motion playground and focuses its first menu option. All four opening options are enabled.
+- Opening `/` shows the standalone Evoker Blocks & Motion playground and focuses its first menu option. All four opening options are enabled.
 - Arrows navigate the opening menu and component selector. Enter enters the selected demo; Escape returns to its selector. Clicking a demo background focuses its controls. Text editing and native history scrolling retain their own keyboard behavior.
-- Every one of the 27 playground entries has a documentation page with an API table. Documentation uses a separate view at `/#/docs`; direct URLs survive reload, legacy component URLs work, and browser Back/Forward switch between documentation and the playground.
+- Every one of the 39 playground entries has a documentation page with an API table. Documentation uses a separate view at `/#/docs`; direct URLs survive reload, legacy component URLs work, and browser Back/Forward switch between documentation and the playground.
 - Quest rewards remain locked until all three objectives are checked. Progress reflects each change, claiming announces the reward, and restarting resets progress. Public-component checks also prove caller-owned checkbox state, read-only structured objectives and compatibility with string requirements.
 - Contact messages start read. Marking unread updates the visible and accessible state; opening the message marks it read and displays its content.
 - The date preview checks every time-of-day boundary: 04:59, 05:00, 11:59, 12:00, 16:59, 17:00, 20:59 and 21:00. Manual preview stays fixed. A controlled browser clock proves live date and period updates across midnight and morning; the real clock is restored afterward.
@@ -53,4 +53,10 @@ The core suite covers deterministic motion, timelines, playback, interruption, i
 
 ## GitHub Pages
 
-The Pages workflow builds the app on Node.js 24 and uploads only `playground/dist`. Vite uses relative asset URLs, so the hash-based playground and documentation work under the `/evoker/` repository path. Production preview verification covers asset loading, all 27 catalog entries, the lazy documentation bundle, direct documentation reloads, the public beta installation command and mobile/desktop overflow. Deployment runs on pushes to `main` and through manual workflow dispatch.
+The Pages workflow builds the app on Node.js 24 and uploads only `playground/dist`. Vite uses relative asset URLs, so the hash-based playground and documentation work under the `/evoker/` repository path. Production preview verification covers asset loading, all 39 catalog entries, the lazy documentation bundle, direct documentation reloads, the public beta installation command and mobile/desktop overflow. Deployment runs on pushes to `main` and through manual workflow dispatch.
+
+## Essentials regression cases
+
+The twelve essentials share examples between the playground and documentation. Browser checks cover accordion/disclosure expansion, state-aware classes and refs, native radio and combobox form values, searchable/disabled/empty options, popover dismissal and focus restoration, all four sheet edges and nested overlays, toast actions/updates/dismissal and paused timers, table semantics, disabled pagination and page changes, decorative reduced-motion skeletons and caller-owned empty-state actions. New widgets retain their native keyboard behavior within the playground.
+
+Every new documentation route receives the existing narrow-screen and 200% text checks. Tables may scroll inside their labelled container. The independent package consumer imports all twelve essentials, the radio/combobox controls subpath, inferred generic values and public prop types; it checks server rendering and distributed styles.

@@ -1,6 +1,6 @@
 # Repository guidance
 
-Evoker is an MIT-licensed, P3R-inspired UI library. Read `CONTRIBUTING.md` for the contributor workflow and `docs/SOURCE_POLICY.md` for distribution boundaries. Keep changes focused and use the existing architecture before adding dependencies or abstractions.
+Evoker is an MIT-licensed, angular UI library. Read `CONTRIBUTING.md` for the contributor workflow and `docs/SOURCE_POLICY.md` for distribution boundaries. Keep changes focused and use the existing architecture before adding dependencies or abstractions.
 
 ## Ownership
 
@@ -14,7 +14,7 @@ Evoker is an MIT-licensed, P3R-inspired UI library. Read `CONTRIBUTING.md` for t
 
 Use Node.js 24 from `.nvmrc` and install with `npm ci`. Run `npm run dev` for the playground. Follow the existing TypeScript/React style, ESM `.js` import specifiers and `evoker-` CSS namespace. Native browser behavior and existing helpers take precedence over duplicate implementations.
 
-The front page is the P3R Blocks & Motion playground. Documentation lives at `/#/docs`; preserve legacy `/#/blocks` and `/#/component` links. Keyboard handling must stay scoped to the focused playground area. Do not intercept native editing, nested widget navigation or portalled modal input with global shortcuts.
+The front page is the Evoker Blocks & Motion playground. Documentation lives at `/#/docs`; preserve legacy `/#/blocks` and `/#/component` links. Keyboard handling must stay scoped to the focused playground area. Do not intercept native editing, nested widget navigation or portalled modal input with global shortcuts.
 
 Applications own data, selection, async operations and status. In particular, QuestBrief completion remains controlled, ContactTile read state belongs to the caller, and DateBadge displays the supplied date and period. Its live local clock belongs to the shared demo, not the reusable badge.
 

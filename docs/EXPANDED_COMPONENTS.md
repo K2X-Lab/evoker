@@ -98,6 +98,6 @@ Syntax highlighting is optional: `renderLine(line, displayedLineNumber)` accepts
 
 ## Source relationships and fidelity limits
 
-Private source research informs the separation of selection, list entrance, detail content, actions, typography and feedback motion. Public components use original geometry and application-owned data. See [source policy](SOURCE_POLICY.md) for distribution boundaries.
+Private reference research informs the separation of selection, list entrance, detail content, actions, typography and feedback motion. Public components use original geometry and application-owned data. See [source policy](SOURCE_POLICY.md) for distribution boundaries.
 
 These components are authored browser adaptations. Native rendering, interpolation, timing overrides and final game composition remain unverified; the library does not claim exact runtime reproduction.

@@ -38,7 +38,7 @@ export type EasingName =
   | 'easeInOutElastic'
   | 'easeOutBounce'
   | 'step'
-  // Persona 3 Reload style named curves (approximated)
+  // Named curve presets (approximated)
   | 'bowa1'
   | 'fuwari1'
   | 'haneru1'
