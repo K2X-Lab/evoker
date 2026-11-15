@@ -10,12 +10,13 @@ import { legacyBlockPages, sourceBlockPages } from './BlockPages.js';
 import { compositionPages } from './CompositionPages.js';
 import { PanelDemo } from './BlockDemos.js';
 import { BrandLink } from './Brand.js';
+import { essentialsPages } from './EssentialsPages.js';
 import { SelectControl } from './SelectControl.js';
 
 const Documentation = lazy(() => import('./Documentation.js').then(module => ({ default: module.Documentation })));
 
 const menuItems: MenuItem[] = [
-  { id: 'components', label: 'Components', description: 'Twenty-seven pieces. One visual language.', angle: -4, offset: 4 },
+  { id: 'components', label: 'Components', description: 'Reusable pieces. One visual language.', angle: -4, offset: 4 },
   { id: 'motion', label: 'Motion', description: 'Independent layers. Shared rhythm.', angle: -2, offset: 16 },
   { id: 'foundations', label: 'Foundations', description: 'Color, contrast and composition.', angle: 1, offset: 4 },
   { id: 'documentation', label: 'Documentation', description: 'Examples, contracts and installation.', angle: -1 },
@@ -32,6 +33,7 @@ const componentItems = [
   ['Transition', '<Transition show={visible} effect="wipe">\n  {children}\n</Transition>', 'Fade, slide or mask. Reversible changes. Reduced motion.', 'transition'],
   ...sourceBlockPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
   ...compositionPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
+  ...essentialsPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
 ] as const;
 
 const interactive = 'button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]';
@@ -96,7 +98,7 @@ function Catalog() {
       else focusWithin(document.getElementById('demo-menu'));
       return;
     }
-    if (target.closest('pre, [role="menu"], [role="tablist"], [role="listbox"], [role="log"]')) return;
+    if (target.closest('pre, [role="menu"], [role="tablist"], [role="listbox"], [role="log"], [role="combobox"], [role="radiogroup"], .evoker-accordion-item, .evoker-collapsible-root, .evoker-table-container')) return;
     const group = target.closest<HTMLElement>('.component-index, .specimen, .motion-controls');
     if (!group || !['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     const controls = controlsWithin(group);
@@ -142,6 +144,9 @@ function Catalog() {
                 <SourceComponents />
                 {compositionPages.map((page, index) => <article key={page.id} id={`demo-${page.id}`} tabIndex={-1} className="specimen specimen-wide">
                   <div className="specimen-label"><span>{index + 22} / {page.title}</span><a href={`#/docs/${page.id}`}>Docs ↗</a></div>{page.examples[0]!.node}
+                </article>)}
+                {essentialsPages.map((page, index) => <article key={page.id} id={`demo-${page.id}`} tabIndex={-1} className="specimen specimen-wide">
+                  <div className="specimen-label"><span>{index + 28} / {page.title}</span><a href={`#/docs/${page.id}`}>Docs ↗</a></div>{page.examples[0]!.node}
                 </article>)}
               </div>
             </div>

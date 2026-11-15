@@ -6,6 +6,7 @@ import { resolve } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { runResponsiveChecks } from './responsive-checks.mjs';
 import { runDocumentationChecks } from './documentation-checks.mjs';
+import { runEssentialsBrowserChecks } from './essentials-browser-checks.mjs';
 
 // Uses an installed Chromium browser and the native DevTools protocol; no test runtime dependency.
 const executable = process.env.CHROME_PATH ?? ['/opt/google/chrome/chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find(existsSync);
@@ -203,7 +204,8 @@ try {
   await click('Replay menu');
   await waitFor(() => evaluate(`document.querySelector('.evoker-menu-item').style.opacity === '1'`), 'reduced motion menu');
   const catalogIds = await evaluate(`[...document.querySelectorAll('.component-index button')].map(button => button.dataset.componentId)`);
-  assert.equal(catalogIds.length, 27, 'all blocks are present on the front page');
+  assert.equal(catalogIds.length, 39, 'all existing blocks and twelve essentials are present on the front page');
+  assert.equal(new Set(catalogIds).size, catalogIds.length, 'catalog entries retain unique identities');
   await evaluate(`document.querySelector('#demo-code-block pre').focus()`);
   await key('ArrowRight', 'ArrowRight', 39);
   assert.equal(await evaluate(`document.activeElement.matches('#demo-code-block pre')`), true, 'code keeps native keyboard scrolling inside the playground');
@@ -269,11 +271,13 @@ try {
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/primitive-checks.tsx'))}).then(module => module.runPrimitiveChecks())`));
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/composition-checks.tsx'))}).then(module => module.runCompositionChecks())`));
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/code-block-checks.tsx'))}).then(module => module.runCodeBlockChecks())`));
+  console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/essentials-checks.tsx'))}).then(module => module.runEssentialsChecks())`));
   const route = async (id) => {
     await evaluate(`location.hash = ${JSON.stringify('#/docs/' + id)}`);
     await waitFor(() => evaluate(`document.querySelector('[data-doc-page]')?.getAttribute('data-doc-page') === ${JSON.stringify(id)}`), `documentation route ${id}`);
   };
   await runDocumentationChecks({ send, evaluate, waitFor, key, route });
+  await runEssentialsBrowserChecks({ send, evaluate, waitFor, key, route });
   for (const id of catalogIds) {
     await route(id);
     assert.equal(await evaluate(`!!document.querySelector('.doc-api') && !document.querySelector('.catalog')`), true, `documentation covers playground component ${id}`);
