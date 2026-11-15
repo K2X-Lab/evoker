@@ -5,6 +5,7 @@ import { Dialog as BaseDialog } from '@base-ui/react/dialog';
 import { Tabs as BaseTabs } from '@base-ui/react/tabs';
 import { Select as BaseSelect } from '@base-ui/react/select';
 import { Tooltip as BaseTooltip } from '@base-ui/react/tooltip';
+import { Popover as BasePopover } from '@base-ui/react/popover';
 import { Menu as BaseMenu } from '@base-ui/react/menu';
 import { PortalTheme } from './theme.js';
 import { cx, partClass } from './style-utils.js';
@@ -90,4 +91,24 @@ export const DropdownMenu = {
   Group: BaseMenu.Group,
   GroupLabel: BaseMenu.GroupLabel,
   Separator: BaseMenu.Separator,
+};
+
+export const Popover = {
+  Root: BasePopover.Root,
+  Trigger: BasePopover.Trigger,
+  Close: BasePopover.Close,
+  Portal: function PopoverPortal({ children, ...props }: BasePopover.Portal.Props) { return <BasePopover.Portal {...props}><PortalTheme>{children}</PortalTheme></BasePopover.Portal>; },
+  Positioner: forwardRef<HTMLDivElement, BasePopover.Positioner.Props>(function PopoverPositioner({ className, ...props }, ref) { return <BasePopover.Positioner {...props} ref={ref} className={partClass('evoker-popover-positioner', className)} />; }),
+  Content: forwardRef<HTMLDivElement, BasePopover.Popup.Props>(function PopoverContent({ className, ...props }, ref) { return <BasePopover.Popup {...props} ref={ref} className={partClass('evoker-popover-content', className)} />; }),
+  Title: forwardRef<HTMLHeadingElement, BasePopover.Title.Props>(function PopoverTitle({ className, ...props }, ref) { return <BasePopover.Title {...props} ref={ref} className={partClass('evoker-popover-title', className)} />; }),
+  Description: forwardRef<HTMLParagraphElement, BasePopover.Description.Props>(function PopoverDescription({ className, ...props }, ref) { return <BasePopover.Description {...props} ref={ref} className={partClass('evoker-description', className)} />; }),
+  Arrow: forwardRef<HTMLDivElement, BasePopover.Arrow.Props>(function PopoverArrow({ className, ...props }, ref) { return <BasePopover.Arrow {...props} ref={ref} className={partClass('evoker-popover-arrow', className)} />; }),
+};
+
+export interface SheetContentProps extends BaseDialog.Popup.Props { side?: 'top' | 'right' | 'bottom' | 'left' }
+export const Sheet = {
+  ...DialogParts,
+  Content: forwardRef<HTMLDivElement, SheetContentProps>(function SheetContent({ side = 'right', className, ...props }, ref) { return <BaseDialog.Popup {...props} ref={ref} data-side={side} className={partClass('evoker-sheet', className)} />; }),
+  Header: forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(function SheetHeader({ className, ...props }, ref) { return <div {...props} ref={ref} className={cx('evoker-sheet-header', className)} />; }),
+  Close: forwardRef<HTMLButtonElement, BaseDialog.Close.Props>(function SheetClose({ className, ...props }, ref) { return <BaseDialog.Close {...props} ref={ref} className={partClass('evoker-sheet-close', className)} />; }),
 };
