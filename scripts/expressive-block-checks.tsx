@@ -4,8 +4,8 @@ import { flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import { ComparisonPanel, ContactTile, CutIn, DateBadge, Dialogue, EvokerProvider, InspectorList, NameEntry, QuestBrief, RankChange, RecordCard, SettingRow, TutorialCallout } from '@k2x/evoker';
 
-// Real browser boundary checks for the public source-informed compositions.
-export async function runSourceComponentChecks() {
+// Real browser boundary checks for the public expressive compositions.
+export async function runExpressiveBlockChecks() {
   const host = document.createElement('div');
   document.body.append(host);
   const root = createRoot(host);
@@ -121,7 +121,7 @@ export async function runSourceComponentChecks() {
     render(<TutorialCallout title="Hint" onDismiss={() => { dismissed = true; }}>Inspect the item.</TutorialCallout>);
     flushSync(() => host.querySelector<HTMLButtonElement>('[aria-label="Dismiss hint"]')!.click());
     check(dismissed, 'Tutorial must expose a native dismissal action');
-    return 'Source components passed: controlled inspector/activation, comparison semantics, record/contact states, associated settings, IME-safe input, UTC date, rapid rank changes, cut-in interruption/reduced motion, dialogue choices, quest and tutorial actions.';
+    return 'Expressive blocks passed: controlled inspector/activation, comparison semantics, record/contact states, associated settings, IME-safe input, UTC date, rapid rank changes, cut-in interruption/reduced motion, dialogue choices, quest and tutorial actions.';
   } finally {
     flushSync(() => root.unmount());
     host.remove();

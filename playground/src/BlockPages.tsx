@@ -41,7 +41,7 @@ export function Reveal() {
 }` }], props: [['show', 'Controlled visibility', 'Required'], ['effect / duration / onExited', 'fade | slide | wipe / milliseconds / exit completion', 'wipe / 280 / —']] },
 ];
 
-export const sourceBlockPages: Page[] = [
+export const expressiveBlockPages: Page[] = [
   { id: 'inspector-list', title: 'InspectorList', description: 'Select an item to inspect its details, then activate or equip it. Arrow keys and Home/End navigate enabled entries. Controlled selection remains separate from activation.', examples: [{ title: 'Inspect equipment', node: <InspectorDemo />, code: `import { useState } from 'react';
 import { InspectorList } from '@k2x/evoker/blocks';
 

@@ -5,8 +5,8 @@ import type { KeyboardEvent, MouseEvent } from 'react';
 import type { MenuItem } from '@k2x/evoker';
 import '../../react/src/styles.css';
 import './style.css';
-import { SourceComponents } from './SourceComponents.js';
-import { legacyBlockPages, sourceBlockPages } from './BlockPages.js';
+import { ExpressiveBlocks } from './ExpressiveBlocks.js';
+import { legacyBlockPages, expressiveBlockPages } from './BlockPages.js';
 import { compositionPages } from './CompositionPages.js';
 import { PanelDemo } from './BlockDemos.js';
 import { BrandLink } from './Brand.js';
@@ -31,7 +31,7 @@ const componentItems = [
   ['KeyHint', '<KeyHint keys={["↑", "↓"]} action="Navigate" />', 'Key, action and optional platform glyph stay separate.', 'key-hint'],
   ['SelectionIndicator', '<SelectionIndicator y={64} height={56} />', 'Independent cursor layers. Interrupted motion keeps current pose.', 'selection-indicator'],
   ['Transition', '<Transition show={visible} effect="wipe">\n  {children}\n</Transition>', 'Fade, slide or mask. Reversible changes. Reduced motion.', 'transition'],
-  ...sourceBlockPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
+  ...expressiveBlockPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
   ...compositionPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
   ...essentialsPages.map(page => [page.title, page.examples[0]!.code, page.description, page.id] as const),
 ] as const;
@@ -141,7 +141,7 @@ function Catalog() {
                 <article id="demo-dialog" tabIndex={-1} className="specimen"><div className="specimen-label"><span>05 / DIALOG</span><span>NATIVE MODAL</span></div><h3>A moment to decide.</h3><p>Focused choices, with room to breathe.</p><Button variant="secondary" onClick={() => setOpen(true)}>Open dialog</Button></article>
                 <article id="demo-key-hint" tabIndex={-1} className="specimen"><div className="specimen-label"><span>07 / KEYHINT</span><span>INPUT + ACTION</span></div><div className="hint-stack"><KeyHint keys={['↑', '↓']} action="Navigate" /><KeyHint keys="Enter" action="Confirm" /><KeyHint keys="Esc" action="Close dialog" /></div></article>
                 <article id="demo-selection-indicator" tabIndex={-1} className="specimen"><div className="specimen-label"><span>08 / SELECTION INDICATOR</span><span>INDEPENDENT LAYER</span></div><div className="cursor-demo"><SelectionIndicator y={cursor * 48} height={40} />{['First position', 'Second position'].map((name, index) => <button type="button" key={name} aria-pressed={cursor === index} onClick={() => setCursor(index)}>{name}</button>)}</div></article>
-                <SourceComponents />
+                <ExpressiveBlocks />
                 {compositionPages.map((page, index) => <article key={page.id} id={`demo-${page.id}`} tabIndex={-1} className="specimen specimen-wide">
                   <div className="specimen-label"><span>{index + 22} / {page.title}</span><a href={`#/docs/${page.id}`}>Docs ↗</a></div>{page.examples[0]!.node}
                 </article>)}

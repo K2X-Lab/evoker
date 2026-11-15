@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { Badge, Button, Card, Checkbox, CodeBlock, Dialog, DropdownMenu, Field, Input, Select, Separator, Slider, Switch, Tabs, Textarea, Theme, Tooltip } from '@k2x/evoker';
 import './documentation.css';
 import { compositionPages } from './CompositionPages.js';
-import { legacyBlockPages, sourceBlockPages } from './BlockPages.js';
+import { legacyBlockPages, expressiveBlockPages } from './BlockPages.js';
 import { BrandLink } from './Brand.js';
 import { essentialsPages } from './EssentialsPages.js';
 import { SelectControl } from './SelectControl.js';
@@ -161,7 +161,7 @@ const gettingStarted = [
 const compactDocumentation = '(max-width: 60rem), (max-height: 32rem)';
 
 export function Documentation() {
-  const blockPages = [...legacyBlockPages, ...sourceBlockPages, ...compositionPages];
+  const blockPages = [...legacyBlockPages, ...expressiveBlockPages, ...compositionPages];
   const shell = useRef<HTMLDivElement>(null);
   const header = useRef<HTMLElement>(null);
   const content = useRef<HTMLElement>(null);

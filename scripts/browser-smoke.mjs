@@ -267,7 +267,7 @@ try {
     writeFileSync(resolve(process.env.EVOKER_SCREENSHOTS, 'evoker-mobile.png'), Buffer.from((await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true })).data, 'base64'));
   }
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/component-checks.tsx'))}).then(module => module.runComponentChecks())`));
-  console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/source-component-checks.tsx'))}).then(module => module.runSourceComponentChecks())`));
+  console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/expressive-block-checks.tsx'))}).then(module => module.runExpressiveBlockChecks())`));
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/primitive-checks.tsx'))}).then(module => module.runPrimitiveChecks())`));
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/composition-checks.tsx'))}).then(module => module.runCompositionChecks())`));
   console.log(await evaluate(`import('/@fs' + ${JSON.stringify(resolve(root, 'scripts/code-block-checks.tsx'))}).then(module => module.runCodeBlockChecks())`));

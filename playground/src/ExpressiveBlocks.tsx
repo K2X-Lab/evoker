@@ -1,8 +1,8 @@
-import { sourceBlockPages } from './BlockPages.js';
+import { expressiveBlockPages } from './BlockPages.js';
 
 /** Playground and documentation mount the same examples and behavior. */
-export function SourceComponents() {
-  return <>{sourceBlockPages.map((page, index) => <article key={page.id} id={`demo-${page.id}`} tabIndex={-1}
+export function ExpressiveBlocks() {
+  return <>{expressiveBlockPages.map((page, index) => <article key={page.id} id={`demo-${page.id}`} tabIndex={-1}
     className={`specimen ${['inspector-list', 'contact-tile', 'dialogue', 'name-entry', 'cut-in', 'tutorial-callout'].includes(page.id) ? 'specimen-wide' : ''}`}>
     <div className="specimen-label"><span>{String(index + 10).padStart(2, '0')} / {page.title}</span><a href={`#/docs/${page.id}`}>Docs ↗</a></div>
     {page.examples[0]!.node}
