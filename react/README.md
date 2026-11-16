@@ -27,7 +27,7 @@ export function App() {
 
 Use `@k2x/evoker/blocks` for CodeBlock, QuestBrief, PartyPanel and other compositions. Smaller entries also include `/button`, `/theme`, `/controls`, `/dialog` and `/tabs`. With Next.js, interactive usage belongs behind a client boundary and the stylesheet belongs in the root layout.
 
-Additional components include Accordion, Collapsible, RadioGroup, Combobox, Popover, Sheet, Toast, Alert, Table, Pagination, Skeleton and Empty. All use the existing theme tokens and stylesheet. RadioGroup and Combobox are also exported from `/controls`. Application code owns data and async operations. New additions require a new npm release before registry consumers can use them.
+Additional components include Accordion, Collapsible, RadioGroup, Combobox, Popover, Sheet, Toast, Alert, Table, Pagination, Skeleton and Empty. All use the existing theme tokens and stylesheet. RadioGroup and Combobox are also exported from `/controls`. Application code owns data and async operations. These components are included in `0.1.0-beta.1`.
 
 The package includes ESM, TypeScript declarations, CSS and the MIT license. It contains original code and geometry; no game artwork, fonts, keys or private research are distributed.
 

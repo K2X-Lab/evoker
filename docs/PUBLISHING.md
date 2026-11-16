@@ -1,6 +1,8 @@
 # Publishing an Evoker beta
 
-The organization release is prepared as `0.1.0-beta.1` for `@k2x/evoker-core` and `@k2x/evoker`, using the `beta` tag. Publish core first, then React. Do not claim the organization packages are available until registry verification and the fresh consumer check pass.
+The first organization release, `0.1.0-beta.1`, is published for `@k2x/evoker-core` and `@k2x/evoker` under the `beta` tag. Registry metadata, archive integrity and the fresh consumer check passed on November 16, 2026.
+
+For future releases, choose an unused version and update the versioned archive paths below; published versions cannot be overwritten. Publish core first, then React, and verify both packages before announcing availability.
 
 ## Account and scope
 

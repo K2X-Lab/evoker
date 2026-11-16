@@ -50,11 +50,11 @@ Open the URL printed by Vite:
 
 The opening menu is keyboard-ready. Click a demo or Tab into it; arrows navigate, Enter/Space activates and Escape goes back. Native inputs, sliders, selects, nested menus and modal focus retain their own behavior.
 
-The catalog also includes Accordion, Collapsible, RadioGroup, Combobox, Popover, Sheet, Toast, Alert, Table, Pagination, Skeleton and Empty. Each has a shared playground example and documentation page. These additions are available from local builds; a new npm release is required to distribute them.
+The catalog also includes Accordion, Collapsible, RadioGroup, Combobox, Popover, Sheet, Toast, Alert, Table, Pagination, Skeleton and Empty. Each has a shared playground example and documentation page. These additions are included in the published `0.1.0-beta.1` release.
 
 ## Use Evoker in your application
 
-**Organization migration:** the `@k2x` beta packages are prepared for publication. Until they are published, the existing beta remains available with `npm install @kartikeyak/evoker@beta`. The commands below use the new organization scope.
+**Published beta:** [`@k2x/evoker`](https://www.npmjs.com/package/@k2x/evoker) and [`@k2x/evoker-core`](https://www.npmjs.com/package/@k2x/evoker-core) are available as `0.1.0-beta.1` under the `beta` tag. Registry metadata, archive checksums and a fresh consumer install were verified on November 16, 2026.
 
 In an existing React 18 or 19 application:
 
